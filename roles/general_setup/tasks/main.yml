@@ -1,0 +1,15 @@
+---
+# tasks file for general_setup
+
+- name: Install katello-ca-consumer
+  yum:
+    name: "{{ rhsm_satellite_url }}/pub/katello-ca-consumer-latest.noarch.rpm"
+    state: present
+    validate_certs: no
+    disable_gpg_check: yes
+  register: katello_rpm
+
+- name: Subscribe to satellite
+  redhat_subscription:
+    state: present
+    activationkey: "{{ general_setup_satellite_activationkey }}"
