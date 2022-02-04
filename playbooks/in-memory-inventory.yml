@@ -19,7 +19,6 @@
         group: "{{ instance.metadata.AnsibleGroup }}"
         ansible_host: "{{ instance.private_v4 }}"
         ssh_private_key_file: "{{ home }}/.ssh/{{ guid }}key.pem"
-      when: instance.metadata.AnsibleGroup == "osp_instances"
       loop: "{{ instances.openstack_servers }}"
       loop_control:
         loop_var: instance
@@ -29,4 +28,5 @@
   connection: local
   gather_facts: false
   tasks:
-    - debug: var=groups
+    - debug: 
+        var: groups
