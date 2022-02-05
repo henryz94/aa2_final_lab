@@ -7,7 +7,7 @@
     guid: "{{ lookup('ENV','GUID') }}"
   tasks:
     - name: Include Instance variables
-      include_vars: "{{ playbook_dir }}/../vars/instances_vars.yml"
+      include_vars: vars/instances_vars.yml"
 
     - name: Create Instance
       openstack.cloud.server:

@@ -1,3 +1,0 @@
----
-- import_playbook: playbooks/provision.yml
-- import_playbook: playbooks/in-memory-inventory.yml
