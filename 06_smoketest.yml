@@ -34,4 +34,4 @@
       delay: 1
       register: result
       delegate_to: localhost
-      loop: "{{ groups['load_balancers']"
+      loop: "{{ groups['load_balancers'] }}"
