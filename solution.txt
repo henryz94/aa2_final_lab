@@ -1,0 +1,3 @@
+https://github.com/henryz94/aa2_final_lab.git
+
+just run `ansible-playbook 00_site.yml` on control node. This will provision whole infrastruce and three tier app
