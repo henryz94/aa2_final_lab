@@ -1,3 +1,6 @@
+- name: Disable the built-in PostgreSQL module
+  command: "dnf -qy module disable postgresql"
+
 - name: Install Postgres packages
   package:
     name: "{{ __package }}"
