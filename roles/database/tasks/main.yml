@@ -1,5 +1,9 @@
 - name: Disable the built-in PostgreSQL module
-  command: "dnf -qy module disable postgresql"
+  dnf:
+    name: '@postgresql'
+    state: absent
+# - name: Disable the built-in PostgreSQL module
+#   command: "dnf -qy module disable postgresql"
 
 - name: Install Postgres packages
   package:
