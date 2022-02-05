@@ -1,16 +1,10 @@
-- name: Add repository
-  yum_repository:
-    name: pgdg-redhat-repo
-    baseurl: "{{ postgres_rhel8_repo }}"
-    description: "Yum repo"
-    gpgcheck: no
-
 - name: Install Postgres packages
   package:
     name: "{{ __package }}"
     disable_gpg_check: yes
     state: present
   loop:
+    - "{{ postgres_rhel8_repo }}"
     - "{{ postgres_packages }}"
     - "{{ postgres_library }}"
   loop_control:
