@@ -4,7 +4,8 @@
 #     state: absent
 - name: Disable the built-in PostgreSQL module
   command: "dnf -qy module disable postgresql"
-  warn: false
+  args:
+    warn: false
 
 - name: Install Postgres packages
   package:
